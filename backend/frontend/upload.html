@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Influencer Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Upload Your Profile</h1>
+    <div id="welcome"></div>
+     <nav>
+        <a href="index.html">Home</a>
+        <a href="upload.html">Upload Profile</a>
+        <a href="search.html">Search</a>
+        <a href="profiles.html">All Profiles</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html" id="logoutLink" style="display: none;">Logout</a>
+     </nav>
+  </header>
+
+  <section class="form-section" id="uploadSection">
+    <form id="profileForm">
+      <label>Name:</label>
+      <input type="text" id="name" required><br><br>
+
+      <label>Platform:</label>
+      <select id="platform">
+        <option>Instagram</option>
+        <option>YouTube</option>
+        <option>Facebook</option>
+      </select><br><br>
+
+      <label>Followers:</label>
+      <input type="number" id="followers" required><br><br>
+
+      <label>Promotion History:</label>
+      <textarea id="promotions" placeholder="Describe past promotions"></textarea><br><br>
+
+      <label>Profile Link:</label>
+      <input type="url" id="profileUrl" placeholder="https://instagram.com/yourprofile" required><br><br>
+
+      <label>Collaboration Email:</label>
+      <input type="email" id="collaborationEmail" placeholder="your.email@example.com" required><br><br>
+
+      <button type="submit">Upload Profile</button>
+      <button type="reset" class="clear-btn">Clear</button>
+    </form>
+  </section>
+
+  <section class="login-required" id="loginRequired" style="display: none;">
+    <div class="hero">
+      <h2>Login Required</h2>
+      <p>You need to be logged in to upload your influencer profile.</p>
+      <p>Please log in to your account to continue.</p>
+      <button onclick="location.href='login.html'">Login Now</button>
+    </div>
+  </section>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/upload.js"></script>
+</body>
+</html>

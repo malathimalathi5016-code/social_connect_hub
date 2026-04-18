@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Favorite Influencers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1>My Favorites</h1>
+      <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+    </div>
+    <div id="welcome"></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload Profile</a>
+      <a href="search.html">Search</a>
+      <a href="profiles.html">All Profiles</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+      <a href="logout.html" id="logoutLink" style="display: none;">Logout</a>
+    </nav>
+  </header>
+
+  <section id="favoritesSection">
+    <section id="favoritesList"></section>
+  </section>
+
+  <section class="login-required" id="loginRequired" style="display: none;">
+    <div class="hero">
+      <h2>Login Required</h2>
+      <p>You need to be logged in to view your favorite influencers.</p>
+      <p>Please log in to your account to continue.</p>
+      <button onclick="location.href='login.html'">Login Now</button>
+    </div>
+  </section>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/favorites.js"></script>
+</body>
+</html>

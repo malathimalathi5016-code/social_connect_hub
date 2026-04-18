@@ -1,0 +1,24 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+# Environment variables
+.env
+.env.*
+
+# Vercel build cache
+.vercel
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

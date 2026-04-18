@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - Social Connect Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <script>
+    if (localStorage.getItem('isAdmin') !== 'true') {
+      alert('Access denied');
+      window.location.href = 'index.html';
+    }
+  </script>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <div id="welcome"></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="search.html">Search</a>
+      <a href="profiles.html">Profiles</a>
+      <a href="upload.html">Upload</a>
+      <a href="logout.html" id="logoutLink" style="display: none;">Logout</a>
+    </nav>
+  </header>
+
+  <section class="form-section" id="adminSection">
+    <h2>Website Analytics</h2>
+    <div class="admin-stats">
+      <div class="stat-card">
+        <h3>Total Registered Users</h3>
+        <p id="totalUsers">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Currently Logged In Users</h3>
+        <p id="activeUsers">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Profiles Uploaded</h3>
+        <p id="totalProfiles">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Instagram Profiles</h3>
+        <p id="instagramProfiles">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>YouTube Profiles</h3>
+        <p id="youtubeProfiles">0</p>
+      </div>
+    </div>
+
+    <div class="charts-container">
+      <div class="chart-wrapper">
+        <h3>User Statistics</h3>
+        <canvas id="userChart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <h3>Platform Distribution</h3>
+        <canvas id="platformChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-required" id="loginRequired" style="display: none;">
+    <div class="hero">
+      <h2>Access Denied</h2>
+      <p>This page is restricted to administrators only.</p>
+      <p>Please log in with admin credentials to continue.</p>
+      <button onclick="location.href='login.html'">Login</button>
+    </div>
+  </section>
+
+  <section class="admin-denied" id="adminDenied" style="display: none;">
+    <div class="hero">
+      <h2>Admin Access Required</h2>
+      <p>You need administrator privileges to view this page.</p>
+      <p>Please contact the system administrator if you believe this is an error.</p>
+      <button onclick="location.href='index.html'">Go to Home</button>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
