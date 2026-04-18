@@ -16,8 +16,8 @@ else:
     import sqlite3
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-FRONTEND_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'frontend'))
-JS_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'js'))
+FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
+JS_DIR = os.path.join(BASE_DIR, 'js')
 DB_PATH = os.path.join(BASE_DIR, 'social_connect_hub.db')
 
 app = Flask(__name__, static_folder=None)
@@ -560,7 +560,6 @@ def serve_frontend(path):
 
     return send_from_directory(FRONTEND_DIR, 'index.html')
 
-
+init_db()
 if __name__ == '__main__':
-    init_db()
     app.run(host='0.0.0.0', port=5000, debug=True)
