@@ -3,6 +3,10 @@ import math
 import os
 from flask import Flask, jsonify, redirect, request, send_from_directory, session, g
 from werkzeug.security import check_password_hash, generate_password_hash
+import os
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
+
 
 USE_MYSQL = bool(os.environ.get('MYSQL_HOST'))
 if USE_MYSQL:
